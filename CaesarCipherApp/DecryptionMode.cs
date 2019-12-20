@@ -65,7 +65,7 @@ namespace CaesarCipherApp
                 sr = new StreamReader(file);
                 while ((line = sr.ReadLine()) != null)
                 {
-                    key = int.Parse(line[0].ToString());
+                    key = int.Parse(line.Split('+')[0].ToString());
                     Decypher = CaesarCipher.Decrypt(line.Split('+')[1].ToString(), key);
                     Console.WriteLine($"The Cipher is: {Decypher}");
 
